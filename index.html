@@ -16,7 +16,7 @@
            <ul class="navlist">
               <li><a href="#home" style="--i:1;">Home</a></li>
               <li><a href="#about" style="--i:2;">About</a></li>
-              <li><a href="#services" style="--i:3;">Education</a></li>
+              <!-- <li><a href="#services" style="--i:3;">Education</a></li> -->
               <li><a href="#skills" style="--i:4;">Skills</a></li>
               <li><a href="#portfolio" style="--i:5;">Projects</a></li>
               <li><a href="#contact" style="--i:6;">Contact</a></li>
@@ -35,7 +35,7 @@
                 <h3>And I'm a</h3>
                 <h3>
                     <span class="word">Web&nbsp;Developer</span>
-                    <span class="word">Content&nbsp;Writer</span>
+                    <span class="word">DSA&nbsp;Learner</span>
                 </h3>
 
             </div>
@@ -58,22 +58,28 @@
             </div>
 
             <div class="btn-box">
-                <a href="#" class="btn">Download CV</a>
-                <a href="" class="btn">Hire Me</a>
+                <a href="https://drive.google.com/file/d/1a3gs6DGLlemqJo6m9LJtaaG_4EisJba9/view?usp=sharing" class="btn">👉&nbsp;&nbsp; Resume</a>
+                <!-- <a href="" class="btn">Hire Me</a> -->
             </div>
-
+            
+          <div class="social-icons-container">
+            <h5>LinkedIn & Coding Profile :</h5>
+          
             <div class="social-icons">
-                <a href="#"><i class='bx bxl-instagram' ></i></a>
-                <a href="#"><i class='bx bxl-whatsapp' ></i></a>
-                <a href="#"><i class='bx bxl-linkedin' ></i></a>
-                <a href="#"><i class='bx bxl-github' ></i></a>
+               
+                <a href="https://www.linkedin.com/in/harsh-kesharwani-328558228?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BwDDolsQbQmaWsEeGEjs5cQ%3D%3D" class="btn"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://leetcode.com/harsh_45" class="btn"><img src="img/leetcode.png" height="20" width="25" alt="" ></a>
+                <a href="https://auth.geeksforgeeks.org/user/harsh_45/?utm_source=geeksforgeeks&utm_medium=my_profile&utm_campaign=auth_user#!" class="btn"><img src="img/gfg.png" height="15" width="25" alt="" ></a>
+                <a href="https://www.codingninjas.com/studio/profile/2895f3d7-6b54-42ea-8744-7ad9978e7375" class="btn"><img src="img/cn.png" height="20" width="25" alt="" ></a>
+                
             
             </div>
+        </div>
         </div>
        
         <div class="home-image scroll-scale">
             <div class="img-box">
-                <img src="img/man.png" alt="">
+                <img src="img/c.png" alt="">
             </div>
 
            <div class="liquid-shape">
@@ -160,16 +166,16 @@
             </ul>
          </p>
          
-         <div class="btn-box">
+         <!-- <div class="btn-box">
             <a href="#" class="btn">Read More</a>
-         </div>
+         </div> -->
 
       </div>
   </section>
 
   <!-- .....services section/Education.......... -->
 
-  <section id="services" class="services">
+  <!-- <section id="services" class="services">
        <div class="main-text scroll-scale">
         <span> My Educational Background</span>  
         <h2>Education</h2>
@@ -210,7 +216,7 @@
               </div>
          </div>
 
-          <!-- <div class="service-box">
+           <div class="service-box">
                 <i class="bx bx-desktop service-icon"></i>
                 <h3>Graphic Designer</h3>
                <p>
@@ -221,9 +227,9 @@
               <div class=" btn-box service-btn">
                   <a href="#" class="btn">Read More</a>
               </div>
-         </div> -->
+         </div> 
      </div>
-  </section>
+  </section> -->
 
   <!-- skills-section -->
 
@@ -332,7 +338,7 @@
    <section id="portfolio" class="portfolio">
       <div class="main-text scroll-scale">
           <span>Some of my work and achievement</span>
-          <h2>Projects | Internships</h2>
+          <h2>Latest Projects | Internships</h2>
       </div>
 
       <div class="container">
@@ -438,16 +444,17 @@
 
    <section id="contact" class="contant">
       <div class="main-text scroll-scale">
-        <span>ask me questions</span>
+        <span>Have any questions or want to work together</span>
         <h2>Contact Me</h2>
       </div>
 
-      <form action="#" class="scroll-bottom">
-        <input type="text" placeholder="Your Name">
-        <input type="text" placeholder="Your Email">
-        <input type="text" placeholder="Your Address">
-        <input type="text" placeholder="Phone Number">
-        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+      <form onsubmit= validateForm() action="https://api.web3forms.com/submit" method="POST"  class="scroll-bottom" >
+        <input type="hidden" name="access_key" value="f835159e-9db6-47a8-b7e9-19c21adc13ac">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+        <input type="number" name="Phone No."  placeholder="Phone Number" id="numberInput" oninput=checkLength(this) required>
+        <textarea type="text" cols="30" rows="10" placeholder="Your Message" name="Message" required></textarea>
+       
         <div class="btn-box formBtn">
             <button type="submit" class="btn">Send Message</button>
         </div>
@@ -464,3 +471,33 @@
  <script src="script.js"></script>
 </body>
 </html>
+<script>
+    function checkLength(input) {
+      // Remove any non-digit characters
+      input.value = input.value.replace(/\D/g, '');
+  
+      // Check if the input exceeds 10 digits
+      if (input.value.length > 10) {
+        // If it exceeds, truncate the input to 10 digits
+        input.value = input.value.slice(0, 10);
+      }
+    }
+    function validateForm() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+
+    if (name === '' || email === '' || message === '') {
+        alert('Please fill in all fields.');
+        if (name === '') {
+            document.getElementById('name').focus();
+        } else if (email === '') {
+            document.getElementById('email').focus();
+        } else {
+            document.getElementById('message').focus();
+        }
+        return false;
+    }
+    return true;
+}
+  </script>
